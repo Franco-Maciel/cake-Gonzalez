@@ -7,13 +7,22 @@ export const NavBar = () => {
 
     return (
         <header className="header">
-            <img className="logo" src={Logo} alt="logo"/>
+           <Link to="/" ><img className="logo" src={Logo} alt="logo"/></Link> 
 
             <nav className="header-nav">
-                <Link to="/" className="header-link">Home</Link>
-                <Link to="/LatestNews" className="header-link">Novedades</Link>
-                <Link to="/Contact" className="header-link">Contacto</Link>
-                <Link to='/productos/FrutosSecos' className='header-link'>Frutos Secos</Link>
+                <div className='menu'>
+                    <Link to="/" className="header-link">Home</Link>
+                    <Link to="/LatestNews" className="header-link">Novedades</Link>
+                    <Link to="/Contact" className="header-link">Contacto</Link>
+                </div>
+                
+                
+                <div className='submenu'>
+                    <Link to='/productos/FrutosSecos' className='header-sublink'>Frutos Secos</Link>
+                    <Link to='/productos/Cereales' className='header-sublink'>Cereales</Link>
+                    <Link to='/productos/Bebidas' className='header-sublink'>Bebidas</Link>
+                </div>
+                
             </nav>
             <CartWidget/>
         </header>

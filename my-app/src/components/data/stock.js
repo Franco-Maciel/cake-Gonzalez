@@ -30,7 +30,7 @@ export const stock = [
         desc: 'Datiles egipcios importados',
         precio: 130,
         img: require('../img/4.jpg'),
-        categoria: 'Frutos Secos',
+        categoria: 'FrutosSecos',
     },
     {
         id: 5,
@@ -38,7 +38,7 @@ export const stock = [
         desc: 'Duraznos desecados',
         precio: 300,
         img: require('../img/5.jpg'),
-        categoria: 'Frutos Secos',
+        categoria: 'FrutosSecos',
     },
     {
         id: 6,
@@ -46,7 +46,7 @@ export const stock = [
         desc: 'eras desecadas premium',
         precio: 300,
         img: require('../img/6.jpg'),
-        categoria: 'Frutos Secos',
+        categoria: 'FrutosSecos',
     },
     {
         id: 7,

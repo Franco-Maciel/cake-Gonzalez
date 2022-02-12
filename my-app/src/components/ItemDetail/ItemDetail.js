@@ -6,12 +6,12 @@ export const ItemDetail = ({id, nombre, img, desc, precio, categoria}) => {
 
     const [count, setCount] = useState(1)
 
-    const handleSiguiente = () => {
-        if (count < 5) {
-            setCount(count + 1)
-        }else {
-            setCount(count)
-        }
+    const handleSiguiente = (e) => {
+        e.stopPropagation()
+        console.log(handleSiguiente)
+        count < 5 && setCount(count + 1)
+            
+        
         
     }
 
