@@ -1,7 +1,7 @@
 import { Button, Card } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 
-export const Item = ( {id, nombre, precio, img, desc} ) => {
+export const Item = ( {id, nombre, precio, img,stock, desc} ) => {
 
     return (
         <Card style={{ width: '16rem' }}>

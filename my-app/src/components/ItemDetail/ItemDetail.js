@@ -1,22 +1,25 @@
-import { useState } from "react"
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import { useContext, useState } from "react"
+import { Link } from "react-router-dom"
+import { CartContext } from "../../context/CartContext"
+import { ItemCount } from "../ItemCount/ItemCount"
 
-export const ItemDetail = ({id, nombre, img, desc, precio, categoria}) => {
 
-    const [count, setCount] = useState(1)
+export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) => {
 
-    const handleSiguiente = (e) => {
-        e.stopPropagation()
-        console.log(handleSiguiente)
-        count < 5 && setCount(count + 1)
-            
+    const [cantidad, setCantidad] = useState(1)
+
+    const { agregarAlCarrito, isInCart } = useContext(CartContext)
+
+    const handleAgregar = () => {
         
-        
-    }
 
-    const handleAnterior = () => {
-        count > 1 && setCount(count - 1)
+        if (!isInCart(id)) {
+            const addItem = {
+                id, nombre, precio, cantidad, desc
+            }
+    
+            agregarAlCarrito(addItem)
+        }
     }
     
 
@@ -26,25 +29,28 @@ export const ItemDetail = ({id, nombre, img, desc, precio, categoria}) => {
             <img src={img} alt={nombre} className = "img-itemDetail"/>
             <p>{desc}</p>
             <h5>Precio: ${precio}</h5>
-            <div id="handle-count">
-                <button 
-                    onClick={handleAnterior} 
-                    id= "back-itemDetail"
-                    disabled={count === 1}
-                >
-                    <RemoveIcon/>
-                </button>
-                <h5 className="count">{count}</h5>
-                <button 
-                    onClick={handleSiguiente} 
-                    
-                    id= "next-itemDetail"
-                >
-                        <AddIcon/>
-                </button>
+            {
+                isInCart(id) 
+                ?   
+                    <Link to="/cart" className="btn btn-success my-3">
+                        Terminar mi compra
+                    </Link>               
+                :
+                    <>
+                        <ItemCount 
+                            max={stock} 
+                            count={cantidad} 
+                            setCount={setCantidad}
+                        />
 
-
-            </div>
+                        <button
+                            className="btn btn-success my-2"            
+                            onClick={handleAgregar}
+                        >
+                            Agregar al carrito
+                        </button>
+                    </>
+            }
             
         </div>
     )

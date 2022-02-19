@@ -8,28 +8,30 @@ import { LatestNews } from './components/LatestNews/LatestNews'
 
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
-
+import { CartProvider } from './context/CartContext'
+import { Cart } from "./components/Cart/Cart";
 
 function App() {
   return (
-    
-    <BrowserRouter>
-      <NavBar/>
-      
-      <Routes>
-        <Route path="/" element= {<ItemsListContainer/>}></Route>
-        <Route path='/productos/:catId' element={ <ItemsListContainer/> }/>
-        <Route path='/detail/:itemId' element={ <ItemDetailContainer/> }/>
-        <Route path="/LatestNews" element= {<LatestNews/>}></Route>
-        <Route path="/Contact" element= {<ContactForm/>}></Route>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar/>
+        
+        <Routes>
+          <Route path="/" element= {<ItemsListContainer/>}></Route>
+          <Route path='/productos/:catId' element={ <ItemsListContainer/> }/>
+          <Route path='/detail/:itemId' element={ <ItemDetailContainer/> }/>
+          <Route path="/LatestNews" element= {<LatestNews/>}></Route>
+          <Route path="/Contact" element= {<ContactForm/>}></Route>
+          <Route path='/cart' element={ <Cart/> }></Route>
 
-        <Route path='*' element={ <Navigate to='/'/> }/>
-      </Routes>
+          <Route path='*' element={ <Navigate to='/'/> }/>
+        </Routes>
+        
+        
+      </BrowserRouter>
       
-      
-    </BrowserRouter>
-      
-   
+    </CartProvider>
   );
 }
 

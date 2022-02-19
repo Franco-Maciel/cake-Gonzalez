@@ -6,6 +6,7 @@ export const stock = [
         precio: 350,
         img: require('../img/1.jpg'),
         categoria: 'FrutosSecos',
+        stock: 10
         
     },
     {
@@ -15,6 +16,7 @@ export const stock = [
         precio: 180,
         img: require('../img/2.jpg'),
         categoria: 'FrutosSecos',
+        stock: 10
     },
     {
         id: 3,
@@ -23,6 +25,7 @@ export const stock = [
         precio: 220,
         img: require('../img/3.jpg'),
         categoria: 'FrutosSecos',
+        stock: 10
     },
     {
         id: 4,
@@ -31,6 +34,7 @@ export const stock = [
         precio: 130,
         img: require('../img/4.jpg'),
         categoria: 'FrutosSecos',
+        stock: 10
     },
     {
         id: 5,
@@ -39,6 +43,7 @@ export const stock = [
         precio: 300,
         img: require('../img/5.jpg'),
         categoria: 'FrutosSecos',
+        stock: 10
     },
     {
         id: 6,
@@ -47,6 +52,7 @@ export const stock = [
         precio: 300,
         img: require('../img/6.jpg'),
         categoria: 'FrutosSecos',
+        stock: 10
     },
     {
         id: 7,
@@ -55,6 +61,7 @@ export const stock = [
         precio: 100,
         img: require('../img/7.jpg'),
         categoria: 'Cereales',
+        stock: 10
     },
     {
         id: 8,
@@ -63,6 +70,7 @@ export const stock = [
         precio: 200,
         img: require('../img/8.jpg'),
         categoria: 'Cereales',
+        stock: 10
     },
     {
         id: 9,
@@ -71,6 +79,7 @@ export const stock = [
         precio: 400,
         img: require('../img/9.jpg'),
         categoria: 'Cereales',
+        stock: 10
     },
     {
         id: 10,
@@ -79,6 +88,7 @@ export const stock = [
         precio: 350,
         img: require('../img/10.jpg'),
         categoria: 'Cereales',
+        stock: 10
     },
     {
         id: 11,
@@ -87,6 +97,7 @@ export const stock = [
         precio: 250,
         img: require('../img/11.jpg'),
         categoria: 'Cereales',
+        stock: 10
     },
     {
         id: 12,
@@ -95,6 +106,7 @@ export const stock = [
         precio: 50,
         img: require('../img/12.jpg'),
         categoria: 'Cereales',
+        stock: 10
     },
     {
         id: 13,
@@ -103,6 +115,7 @@ export const stock = [
         precio: 350,
         img: require('../img/13.jpg'),
         categoria: 'Bebidas',
+        stock: 10
     },
     {
         id: 14,
@@ -111,6 +124,7 @@ export const stock = [
         precio: 350,
         img: require('../img/14.jpg'),
         categoria: 'Bebidas',
+        stock: 10
     },
     {
         id: 15,
@@ -119,6 +133,7 @@ export const stock = [
         precio: 350,
         img: require('../img/15.jpg'),
         categoria: 'Bebidas',
+        stock: 10
     },
     {
         id: 16,
@@ -127,5 +142,6 @@ export const stock = [
         precio: 350,
         img: require('../img/16.jpg'),
         categoria: 'Bebidas',
+        stock: 10
     },
 ]

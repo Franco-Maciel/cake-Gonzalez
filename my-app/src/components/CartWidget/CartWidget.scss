@@ -6,8 +6,21 @@
     width: 70px;
     height: 70px;
     font-size: 2em;
+    text-decoration: none;
     .icon-widget{
         font-size: 40px;
+        color: rgb(255, 255, 255);
+        &:hover{
+            color: $color-secundario;
+        }
+        
     }
+
+    .cantidad-cart{
+        color: rgb(255, 255, 255);
+        
+    }
+   
     
 }
+
