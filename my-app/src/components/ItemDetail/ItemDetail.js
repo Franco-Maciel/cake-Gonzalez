@@ -1,25 +1,30 @@
 import { useContext, useState } from "react"
-import { useParams } from 'react-router-dom'
+
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount/ItemCount"
-import { pedirDatos } from '../helpers/pedirDatos';
+
 
 
 export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) => {
 
 
-    const [item, setItem] = useState(null)
+    const [add, addItem] = useState(false)
 
-    const { itemId } = useParams()
+    const onAdd = (count) => {
+        addItem(true)
+        const itemAdd = {
+            id, nombre, img, desc, precio, stock, count
+        }
+        agregarAlCarrito(itemAdd)
+    }
+
+    
        
 
-        pedirDatos()
-            .then((res) => {
-                setItem( res.find((el) => el.id === Number(itemId)) )
-            })
+      
 
-    const {  isInCart } = useContext(CartContext)
+    const {  agregarAlCarrito } = useContext(CartContext)
 
 
     return (
@@ -29,16 +34,17 @@ export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) =>
             <p>{desc}</p>
             <h5>Precio: ${precio}</h5>
             {
-                isInCart(id) 
+                add 
                 ?   
                     <Link to="/cart" className="btn btn-success my-3">
                         Terminar mi compra
                     </Link>               
                 :
                     <>
-                        <ItemCount {...item}
+                        <ItemCount 
                             max={stock} 
-                          
+                            min= {1}
+                            onAdd = {onAdd}
                         />
 
                         

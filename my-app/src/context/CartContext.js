@@ -6,7 +6,15 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     const agregarAlCarrito = (item) => {
-      setCart( [...cart, item] )
+      if (isInCart(item.id)){
+        const repetido = cart.find((prod)=> prod.id === item.id)
+        repetido.count = repetido.count + item.count
+        const newCart = cart.filter((prod)=> prod.id !== item.id)
+        setCart([...newCart,repetido])
+      }else{
+        setCart( [...cart, item] )
+      }
+      
     }
     
     const isInCart = (id) => {

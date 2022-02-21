@@ -1,15 +1,13 @@
-import {useContext,  useState } from "react"
-import { CartContext } from "../../context/CartContext"
+import { useState } from "react"
+
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
-export const ItemCount = ({max, min = 1,id, nombre, precio, desc}) => {
+export const ItemCount = ({max, min = 1,onAdd}) => {
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(min)
 
-    const handleSiguiente = (e) => {
-        e.stopPropagation()
-        
+    const handleSiguiente = () => {    
         count < max && setCount(count + 1)
               
     }
@@ -18,23 +16,15 @@ export const ItemCount = ({max, min = 1,id, nombre, precio, desc}) => {
         count > min && setCount(count - 1)
     }
 
-    const {  isInCart, agregarAlCarrito } = useContext(CartContext)
-    const handleAgregar = () => {
-        if (!isInCart(id)) {
-            const addItem = {
-                id, nombre, precio, count, desc
-            }
-
-        agregarAlCarrito(addItem)
-        }
-    }    
+    
+     
     return (
         <>
         <div id="handle-count">
             <button 
             onClick={handleAnterior} 
             id= "back-itemDetail"
-            disabled={count === 1}
+            
             >
                 <RemoveIcon/>
             </button>
@@ -51,7 +41,7 @@ export const ItemCount = ({max, min = 1,id, nombre, precio, desc}) => {
         </div>
             <button
             className="btn btn-success my-2"            
-            onClick={handleAgregar}
+            onClick={() =>onAdd(count)}
             >
                 Agregar al carrito
             </button>
