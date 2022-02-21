@@ -14,11 +14,11 @@ export const CartProvider = ({children}) => {
     }
 
     const cantidadCart = () => {
-      return cart.reduce((acc, prod) => acc + prod.cantidad, 0)
+      return cart.reduce((acc, prod) => acc + prod.count, 0)
     }
 
     const totalCart = () => {
-      return cart.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
+      return cart.reduce((acc, prod) => acc + prod.count * prod.precio, 0)
     }
 
     const vaciarCart = () => {

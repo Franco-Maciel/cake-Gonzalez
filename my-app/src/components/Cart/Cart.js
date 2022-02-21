@@ -34,9 +34,9 @@ export const Cart = () => {
                     <div key={item.id}>
                         <h4>{item.nombre}</h4>
                         <p>{item.desc}</p>
-                        <p>Cantidad: {item.cantidad}</p>
-                        <p>Sub-total: ${item.cantidad * item.precio}</p>
-                        <icon><DeleteForeverOutlinedIcon fontSize="medium"  onClick={() => eliminarItem(item.id)}/></icon>
+                        <p>Cantidad: {item.count}</p>
+                        <p>Sub-total: ${item.count * item.precio}</p>
+                        <i><DeleteForeverOutlinedIcon fontSize="medium"  onClick={() => eliminarItem(item.id)}/></i>
                     </div>
                 ))
             }

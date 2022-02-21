@@ -1,27 +1,26 @@
 import { useContext, useState } from "react"
+import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount/ItemCount"
+import { pedirDatos } from '../helpers/pedirDatos';
 
 
 export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) => {
 
-    const [cantidad, setCantidad] = useState(1)
 
-    const { agregarAlCarrito, isInCart } = useContext(CartContext)
+    const [item, setItem] = useState(null)
 
-    const handleAgregar = () => {
-        
+    const { itemId } = useParams()
+       
 
-        if (!isInCart(id)) {
-            const addItem = {
-                id, nombre, precio, cantidad, desc
-            }
-    
-            agregarAlCarrito(addItem)
-        }
-    }
-    
+        pedirDatos()
+            .then((res) => {
+                setItem( res.find((el) => el.id === Number(itemId)) )
+            })
+
+    const {  isInCart } = useContext(CartContext)
+
 
     return (
         <div>
@@ -37,18 +36,12 @@ export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) =>
                     </Link>               
                 :
                     <>
-                        <ItemCount 
+                        <ItemCount {...item}
                             max={stock} 
-                            count={cantidad} 
-                            setCount={setCantidad}
+                          
                         />
 
-                        <button
-                            className="btn btn-success my-2"            
-                            onClick={handleAgregar}
-                        >
-                            Agregar al carrito
-                        </button>
+                        
                     </>
             }
             
