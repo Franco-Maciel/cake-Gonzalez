@@ -8,8 +8,10 @@ import { ItemCount } from "../ItemCount/ItemCount"
 
 export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) => {
 
-
+    const {  agregarAlCarrito } = useContext(CartContext)
     const [add, addItem] = useState(false)
+    
+
 
     const onAdd = (count) => {
         addItem(true)
@@ -20,11 +22,6 @@ export const ItemDetail = ({id, nombre, img, desc, precio, stock, categoria}) =>
     }
 
     
-       
-
-      
-
-    const {  agregarAlCarrito } = useContext(CartContext)
 
 
     return (
