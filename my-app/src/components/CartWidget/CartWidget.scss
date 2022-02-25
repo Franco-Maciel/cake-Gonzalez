@@ -1,4 +1,4 @@
-.CartWidget{
+.cart-widget{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,3 +24,7 @@
     
 }
 
+.cart-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
