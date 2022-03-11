@@ -1,6 +1,7 @@
 
 import { ItemsListContainer } from './components/ItemListContainer/ItemsListContainer';
 import { NavBar } from './components/NavBar/NavBar';
+import { Carousel } from './components/Carousel/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/style.scss'
 import { ContactForm } from './components/Contact/Contact'
@@ -17,9 +18,15 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <NavBar/>
-        
-        <Routes>
-          <Route path="/" element= {<ItemsListContainer/>}></Route>
+   
+        <Routes> 
+          <Route path="/" 
+              element= 
+              {<>
+                <Carousel/>
+                <ItemsListContainer/>
+              </>}>
+          </Route>         
           <Route path='/productos/:catId' element={ <ItemsListContainer/> }/>
           <Route path='/detail/:itemId' element={ <ItemDetailContainer/> }/>
           <Route path="/LatestNews" element= {<LatestNews/>}></Route>

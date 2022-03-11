@@ -5,6 +5,7 @@ import { ItemList } from "../ItemList/ItemList"
 import { useParams } from 'react-router-dom'
 import {Loader} from '../Loader/Loader';
 
+
 export const ItemsListContainer = () => {
 
     const [productos, setProductos] = useState([])
@@ -41,6 +42,8 @@ export const ItemsListContainer = () => {
                 loading 
                     ? <Loader/>
                     : <ItemList productos={productos}/>
+                        
+                      
             } 
         </>
     

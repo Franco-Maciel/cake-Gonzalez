@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext"
 import { generarOrden } from "../../firebase/generarOrden"
 import { ThankYou } from "./ThankYou"
 import { Validar } from "./Validar"
+import { SuOrden } from "./SuOrden"
 
 export const Checkout = () => {
 
@@ -37,8 +38,12 @@ export const Checkout = () => {
     if (cart.length === 0) {
         return <Navigate to="/"/>
     }
-
-    return (
+   
+    return <>
+        <div className="contenedorCheckout">
+        
+        <SuOrden/>
+        <div className="vl"></div>
         <div className="container my-5">
             <h2>Checkout</h2>
             <hr/>
@@ -69,10 +74,14 @@ export const Checkout = () => {
                     name='tel'
                 />
 
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-success">
                     Enviar
                 </button>
             </form>
-        </div>
-    )
+            
+            </div>
+           
+            </div>
+    
+    </>
 }
