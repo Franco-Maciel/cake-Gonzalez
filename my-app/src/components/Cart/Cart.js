@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext"
 import { Button} from "react-bootstrap"
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import { Link } from "react-router-dom"
-
+import gift from '../img/no-se.gif'
 
 export const Cart = () => {
 
@@ -12,9 +12,10 @@ export const Cart = () => {
 
     // render si el cart está vacío
     if (cart.length === 0) {
-        return <div className="container my-4">
+        return <div className="container my-4" id="containerCarritoVacio">
                     <h2>Tu carrito está vacío</h2>
-                    <Link to="/" className="btn btn-primary">Volver</Link>
+                    <img className="giftCarrito" src= {gift} alt=""/> 
+                    <Link to="/" className="btn btn-success">Seguir mirando</Link>
                 </div>
     }
 

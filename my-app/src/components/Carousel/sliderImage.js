@@ -1,13 +1,13 @@
-export default [
+export const imagenes = [
   {
     title: "",
     description: "",
-    urls: "https://cdn.pixabay.com/photo/2018/04/16/09/52/food-3324097_960_720.jpg",
+    urls: require("../img/portada.png"),
   },
   {
     title: "",
     description: "",
-    urls:"https://cdn.pixabay.com/photo/2018/04/16/09/52/food-3324097_960_720.jpg",
+    urls:"https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/363/themes/amazonas/1-slide-1646104958655-5221773831-d015d99cbd1d21cac9721257faaa7a8e1646104963-1920-1920.webp?602292850",
   },
   {
     title: "",
@@ -27,7 +27,7 @@ export default [
   {
     title: "",
     description: "",
-    urls: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/363/themes/amazonas/1-slide-1646104958655-5221773831-d015d99cbd1d21cac9721257faaa7a8e1646104963-1920-1920.webp?602292850",
+    urls: "https://cdn.pixabay.com/photo/2018/04/16/09/52/food-3324097_960_720.jpg",
   },
   {
     title: "",

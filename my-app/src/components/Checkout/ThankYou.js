@@ -7,6 +7,6 @@ export const ThankYou = ({order}) => {
                 <h2>Gracias por tu compra!</h2>
                 <hr/>
                 <h3>Tu número de orden es: {order}</h3>
-                <Link to="/" className="btn btn-primary">Volver</Link>
+                <Link to="/" className="btn btn-outline-dark">Volver</Link>
             </div>
 }

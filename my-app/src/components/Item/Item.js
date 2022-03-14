@@ -1,7 +1,8 @@
-import { Button, Card } from "react-bootstrap"
+import { Card } from "react-bootstrap"
 import { Link } from 'react-router-dom'
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
-export const Item = ( {id, nombre, precio, img, desc} ) => {
+export const Item = ( {id, nombre, precio, img, desc, Novedad} ) => {
 
     return (
         <Card style={{ width: '16rem' }}>
@@ -14,8 +15,8 @@ export const Item = ( {id, nombre, precio, img, desc} ) => {
                 <Card.Text>
                     Precio: ${precio}
                 </Card.Text>
-                <Link to={`/detail/${id}`}>
-                    <Button variant="primary" className="ver-mas">Ver más</Button>
+                <Link to={`/detail/${id}`} className ="linkCard">
+                    <button variant="primary" className="ver-mas" ><VisibilityOutlinedIcon className="VisibilityOutlinedIcon"/><h6 className="VisibilityText" >VER</h6> </button>
                 </Link>
             </Card.Body>
         </Card>

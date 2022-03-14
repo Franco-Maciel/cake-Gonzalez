@@ -11,8 +11,8 @@ export const NavBar = () => {
 
             <nav className="header-nav">
                 <div className='menu'>
-                    <Link to="/" className="header-link">Productos</Link>
-                    <Link to="/LatestNews" className="header-link">Novedades</Link>
+                    <Link to='/productos' className="header-link">Productos</Link>
+                    <Link to="/Novedad/true" className="header-link">Novedades</Link>
                     <Link to="/Contact" className="header-link">Contacto</Link>
                 </div>
                 

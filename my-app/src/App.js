@@ -1,11 +1,12 @@
 
 import { ItemsListContainer } from './components/ItemListContainer/ItemsListContainer';
 import { NavBar } from './components/NavBar/NavBar';
+import { Footer } from './components/Footer/Footer';
 import { Carousel } from './components/Carousel/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/style.scss'
 import { ContactForm } from './components/Contact/Contact'
-import { LatestNews } from './components/LatestNews/LatestNews'
+import { LatestNewsContain } from './components/LatestNews/LatestNewsContain'
 
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
@@ -25,11 +26,13 @@ function App() {
               {<>
                 <Carousel/>
                 <ItemsListContainer/>
+                <Footer/>
               </>}>
-          </Route>         
+          </Route>
+          <Route path='/productos' element={ <ItemsListContainer/> }/>         
           <Route path='/productos/:catId' element={ <ItemsListContainer/> }/>
           <Route path='/detail/:itemId' element={ <ItemDetailContainer/> }/>
-          <Route path="/LatestNews" element= {<LatestNews/>}></Route>
+          <Route path="/Novedad/:novedadId"  element= {<LatestNewsContain/>}></Route>
           <Route path="/Contact" element= {<ContactForm/>}></Route>
           <Route path='/cart' element={ <Cart/> }></Route>
           <Route path='/checkout' element={ <Checkout/> } />
@@ -37,6 +40,7 @@ function App() {
           <Route path='*' element={ <Navigate to='/'/> }/>
         </Routes>
         
+       
         
       </BrowserRouter>
       

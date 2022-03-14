@@ -7,6 +7,10 @@ export const Validar = (values) => {
         alert("El nombre es demasiado corto")
         return false
     }
+    if (values.direccion.length < 5) {
+        alert("la direccion es demasiado corto")
+        return false
+    }
     if (!validateMail.test(values.email)) {
         alert("El email es inválido")
         return false

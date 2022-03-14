@@ -14,6 +14,9 @@ export const Checkout = () => {
 
     const [values, setValues] = useState({
         nombre: '',
+        direccion:'',
+        localidad:'',
+        provincia:'',
         email: '',
         tel: '',
     })
@@ -56,6 +59,30 @@ export const Checkout = () => {
                     value={values.nombre}
                     onChange={handleInputChange}
                     name='nombre'
+                />
+                <input
+                    className="form-control my-2"
+                    type='text'
+                    placeholder="dirección de envío"
+                    value={values.direccion}
+                    onChange={handleInputChange}
+                    name='direccion'
+                />
+                 <input
+                    className="form-control my-2"
+                    type='text'
+                    placeholder="localidad"
+                    value={values.localidad}
+                    onChange={handleInputChange}
+                    name='localidad'
+                />
+                <input
+                    className="form-control my-2"
+                    type='text'
+                    placeholder="provincia"
+                    value={values.provincia}
+                    onChange={handleInputChange}
+                    name='provincia'
                 />
                 <input
                     className="form-control my-2"

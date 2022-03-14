@@ -1,9 +1,16 @@
-export const LatestNews = () => {
+import { Contenedor } from "../Contenedor/Contenedor"
+import { Item } from "../Item/Item"
+
+
+export const LatestNews = ( {productos} ) => {
 
     return (
-        <div className='latest-news'>
-            <p>aquí van las novedades</p>
-        </div>
-        
+        <Contenedor>    
+            <h2>Novedades</h2>   
+            <hr/>
+            <div className="row">
+                { productos.map( (el) => <Item key={el.id} {...el}/> )}
+            </div> 
+        </Contenedor>
     )
 }

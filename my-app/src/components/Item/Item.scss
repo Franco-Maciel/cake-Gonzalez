@@ -1,13 +1,55 @@
+.linkCard{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    max-width: 130px;
+    height: 35px;
+  
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-radius:20px;
+    background-color: #ffffff;
+   border: solid $color-principal 1px;
+   
+   &:hover{
+    background-color:$color-principal;
+   }
+
+.ver-mas{
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    border: none;
+    background-color: #ffffff;
+    color: $color-principal;
+    width: 130px;
+    height: 30px;
+    
+    border-radius:20px;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    &:hover{
+        background-color: $color-principal;
+        color: #ffffff;
+       
+       }
+}
+
+.VisibilityOutlinedIcon {
+    
+    font-size: small;
+}
+.VisibilityText{
+   
+    
+    margin-top: 7px;
+}
+
+}
 .img-item{
     padding-top: 5px;
 }
 
-.ver-mas{
-   background-color: $color-principal;
-   border: none;
-   transition: background-color 0,8s;
-   &:hover{
-    background-color:rgb(53, 204, 129)
-
-   }
-}
