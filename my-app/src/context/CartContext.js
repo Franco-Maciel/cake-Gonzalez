@@ -6,10 +6,15 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     const agregarAlCarrito = (item) => {
+      //consulta si el producto ya esta en el carrito
       if (isInCart(item.id)){
+        //Filtrado de producto que se quiere agregar
         const repetido = cart.find((prod)=> prod.id === item.id)
+        //Sumando la cantidad que se quiere agregar al producto que ya esta en el carrito
         repetido.count = repetido.count + item.count
+        //Separando el resto de productos que son distintos al que se quiere agregar.
         const newCart = cart.filter((prod)=> prod.id !== item.id)
+        //actualiza carrito
         setCart([...newCart,repetido])
       }else{
         setCart( [...cart, item] )

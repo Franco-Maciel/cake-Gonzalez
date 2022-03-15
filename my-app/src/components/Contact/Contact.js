@@ -5,11 +5,9 @@ export const ContactForm = () => {
 
     const [values, setValues] = useState({
         nombre: '',
-        direccion:'',
-        localidad:'',
-        provincia:'',
         email: '',
         tel: '',
+        textarea:'',
     })
 
     const handleInputChange = (e) => {
@@ -39,30 +37,8 @@ export const ContactForm = () => {
                     onChange={handleInputChange}
                     name='nombre'
                 />
-                <input
-                    className="form-control my-2"
-                    type='text'
-                    placeholder="dirección de envío"
-                    value={values.direccion}
-                    onChange={handleInputChange}
-                    name='direccion'
-                />
-                 <input
-                    className="form-control my-2"
-                    type='text'
-                    placeholder="localidad"
-                    value={values.localidad}
-                    onChange={handleInputChange}
-                    name='localidad'
-                />
-                <input
-                    className="form-control my-2"
-                    type='text'
-                    placeholder="provincia"
-                    value={values.provincia}
-                    onChange={handleInputChange}
-                    name='provincia'
-                />
+               
+                
                 <input
                     className="form-control my-2"
                     type='email'
@@ -78,6 +54,16 @@ export const ContactForm = () => {
                     value={values.tel}
                     onChange={handleInputChange}
                     name='tel'
+                />
+                <textarea
+                    className="form-control my-2"
+                    type='textarea'
+                    placeholder="escribenos..."
+                    value={values.text}
+                    onChange={handleInputChange}
+                    name='textarea'
+                    maxLength='300'
+                    
                 />
 
                 <button type="submit" className="btn btn-success">

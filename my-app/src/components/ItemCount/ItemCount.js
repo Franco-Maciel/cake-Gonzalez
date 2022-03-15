@@ -40,7 +40,8 @@ export const ItemCount = ({max, min = 1,onAdd}) => {
     
         </div>
             <button
-            className="btn btn-success my-2"            
+            className="btn btn-success my-2"  
+            id="agregar-carrito"          
             onClick={() =>onAdd(count)}
             >
                 Agregar al carrito
