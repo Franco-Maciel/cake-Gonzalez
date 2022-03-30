@@ -1,8 +1,8 @@
 
 import { ItemsListContainer } from './components/ItemListContainer/ItemsListContainer';
 import { NavBar } from './components/NavBar/NavBar';
-import { Footer } from './components/Footer/Footer';
-import { Carousel } from './components/Carousel/Carousel';
+
+import { Home } from './components/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/style.scss'
 import { ContactForm } from './components/Contact/Contact'
@@ -21,14 +21,7 @@ function App() {
         <NavBar/>
    
         <Routes> 
-          <Route path="/" 
-              element= 
-              {<>
-                <Carousel/>
-                <ItemsListContainer/>
-                <Footer/>
-              </>}>
-          </Route>
+          <Route path="/" element= {<Home/> }/>
           <Route path='/productos' element={ <ItemsListContainer/> }/>         
           <Route path='/productos/:catId' element={ <ItemsListContainer/> }/>
           <Route path='/detail/:itemId' element={ <ItemDetailContainer/> }/>

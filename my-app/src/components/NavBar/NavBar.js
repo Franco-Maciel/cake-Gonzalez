@@ -18,7 +18,7 @@ export const NavBar = () => {
                 <div className='menu'>
                     <Link to='/' className="header-link">Home</Link>
                     <ul>
-                        <Link to='/productos' className="header-link" onMouseOver={openClose}>Productos<KeyboardArrowDownIcon/></Link>
+                        <Link to='' className="header-link" onClick={openClose}>Productos<KeyboardArrowDownIcon/></Link>
                         
                         {isOpened ?
                         <div className='submenu'>

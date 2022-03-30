@@ -9,7 +9,7 @@
 
     @media (max-width: 768px) {
         flex-direction: column;
-
+        
     }
 
     .logo {
@@ -60,6 +60,7 @@
                 
                 @media (max-width: 768px) {
                     margin-right: 30px;
+                    
 
                     &:last-of-type {
                         margin-right: 0;
