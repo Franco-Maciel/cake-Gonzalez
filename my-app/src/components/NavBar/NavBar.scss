@@ -16,11 +16,15 @@
         width: 100px;
         height: 70px;
         font-size: 2em;
-        
+        max-inline-size: 100%;
+        block-size: auto;
+       
     
 
     @media (max-width: 768px) {
         margin-bottom: 20px;
+        max-inline-size: 100%;
+        block-size: auto;
     }
     
 }
