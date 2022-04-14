@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { CartWidget } from '../CartWidget/CartWidget';
 import  Logo  from '../img/logo.png';
 import {Link} from 'react-router-dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 import {
   Container,
   LogoContainer,
+  CartContainer,
   Wrapper,
   Menu,
   MenuItem,
@@ -21,7 +24,7 @@ import {
 } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-export const  NavBarcopy = () => {
+export const  NavBarRspv= () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const [isOpened, setIsOpened] = useState(false);
@@ -36,6 +39,9 @@ export const  NavBarcopy = () => {
             <Link to="/" ><img className="logo1" src={Logo} alt="logo"/></Link> 
           </LogoContainer>
 
+          <CartContainer>
+            <CartWidget/>
+          </CartContainer>
           <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
             {showMobileMenu ? <FaTimes /> : <FaBars />}
           </MobileIcon>
@@ -45,35 +51,36 @@ export const  NavBarcopy = () => {
               <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                 <div>
                   <FaHome />
-                  <Link to='/' className="header-link">Home</Link>
+                  <Link to='/' className="header-linkc">Home</Link>
                 </div>
               </MenuItemLink>
             </MenuItem>
             <MenuItem   >
-              <MenuItemLink opent={showMobileMenu} >
+              <MenuItemLink >
                 <div >
                   <FaShoppingBasket />
                   <Link to='' className="header-linkc" onClick={() => setIsOpened(!isOpened)}>Productos</Link><KeyboardArrowDownIcon/>
                 </div>  
               </MenuItemLink>
             </MenuItem>
-            {isOpened ? <>
-                <MenuItem  onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                  <MenuItemLink>
-                    <div className="submenu">
-                        <Link to='/productos/FrutosSecos' className='header-sublinkc'>Frutos Secos</Link>
-                        <Link to='/productos/Cereales' className='header-sublinkc'>Cereales</Link>
-                        <Link to='/productos/Bebidas' className='header-sublinkc'>Bebidas</Link>
-                    </div>
-                    </MenuItemLink>
-                </MenuItem>
-                </>
-                : undefined }
+            {isOpened ? 
+            <>
+            <MenuItem  onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              <MenuItemLink id="submenu-nav">
+                <div className="submenu-nav">
+                  <Link to='/productos/FrutosSecos' className='header-sublinkc'>Frutos Secos</Link>
+                  <Link to='/productos/Cereales' className='header-sublinkc'>Cereales</Link>
+                  <Link to='/productos/Bebidas' className='header-sublinkc'>Bebidas</Link>
+                </div>
+              </MenuItemLink>
+            </MenuItem>
+            </>
+            : undefined }
             <MenuItem>
               <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                 <div>
                   <FaRegStar />
-                  <Link to="/Novedad/true" className="header-link">Novedades</Link>
+                  <Link to="/Novedad/true" className="header-linkc">Novedades</Link>
                 </div>
               </MenuItemLink>
             </MenuItem>
@@ -82,12 +89,13 @@ export const  NavBarcopy = () => {
               <MenuItemLink onClick={() => setShowMobileMenu(!showMobileMenu)}>
                 <div>
                   <FaGlasses />
-                  <Link to="/Contact" className="header-link">Contacto</Link>
+                  <Link to="/Contact" className="header-linkc">Contacto</Link>
                 </div>
               </MenuItemLink>
             </MenuItem>
           </Menu>
         </IconContext.Provider>
+      
       </Wrapper>
     </Container>
   );

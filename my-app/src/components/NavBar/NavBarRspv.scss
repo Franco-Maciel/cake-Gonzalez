@@ -1,0 +1,63 @@
+.logo1 {
+    width: 100px;
+    height: 70px;
+    font-size: 2em;
+    max-inline-size: 100%;
+    block-size: auto;
+    
+}
+
+#submenu-nav {
+    background-color: $color-secundario;
+    margin-bottom: 1rem;
+    
+}
+
+.header-linkc  {
+    color: white;
+    
+    &:hover{
+        color: white;
+    }
+}
+
+.header-sublinkc {
+    color: white;
+    transition: all 0.5s;
+
+    &:hover{
+        color: rgb(189, 228, 194);
+        
+        
+    }
+}
+
+.submenu-nav{  
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content:center;
+    align-content:center;
+    flex-wrap: wrap;
+    @media screen and (max-width: 960px){
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        justify-content:center;
+        align-content:center;
+        flex-wrap: wrap;
+       
+
+        &:first-child{
+            display: flex;
+            align-items: flex-start;
+            margin: 0;
+            padding: 0;
+            
+            
+        }
+       
+    }
+
+}
+

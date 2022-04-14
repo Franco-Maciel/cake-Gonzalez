@@ -1,6 +1,6 @@
 
 import { ItemsListContainer } from './components/ItemListContainer/ItemsListContainer';
-import { NavBarcopy } from './components/NavBar/NavBarcopy';
+import { IndexNavBar } from './components/NavBar/IndexNavBar';
 
 import { Home } from './components/Home/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,7 +18,7 @@ function App() {
   return (
     <CartProvider>
       <BrowserRouter>
-        <NavBarcopy/>
+        <IndexNavBar/>
    
         <Routes> 
           <Route path="/" element= {<Home/> }/>

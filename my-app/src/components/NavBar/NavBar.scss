@@ -7,10 +7,7 @@
     justify-content: space-around;
     align-items: center;
 
-    @media (max-width: 768px) {
-        flex-direction: column;
-        
-    }
+   
 
     .logo {
         width: 100px;
@@ -18,15 +15,7 @@
         font-size: 2em;
         max-inline-size: 100%;
         block-size: auto;
-       
-    
-
-    @media (max-width: 768px) {
-        margin-bottom: 20px;
-        max-inline-size: 100%;
-        block-size: auto;
-    }
-    
+        
 }
 
 .header-nav {
@@ -62,14 +51,7 @@
                     text-decoration: none; 
                     color: $color-secundario;
                 
-                @media (max-width: 768px) {
-                    margin-right: 30px;
-                    
-
-                    &:last-of-type {
-                        margin-right: 0;
-                    }
-                }
+              
             }
         }}        
         .submenu{
@@ -111,17 +93,11 @@
                     font-size: 15px;
                     font-weight: 500;
                     cursor: pointer;
-                    text-decoration:underline #f5f4f4;
-                    color: $color-secundario;
+                    text-shadow: 2px 4px 7px #f7f7f7;
+                    color: $color-secundario ;
                     
                 
-                    @media (max-width: 768px) {
-                        margin-right: 30px;
-
-                        &:last-of-type {
-                            margin-right: 0;
-                        }
-                    }
+                    
                 }
             }        
     

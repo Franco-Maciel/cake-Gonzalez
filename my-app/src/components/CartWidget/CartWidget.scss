@@ -7,9 +7,17 @@
     height: 70px;
     font-size: 2em;
     text-decoration: none;
+    @media screen and (max-width: 500px){
+        font-size: 1.7em;
+        
+    }  
     .icon-widget{
         font-size: 40px;
         color: rgb(255, 255, 255);
+        @media screen and (max-width: 500px){
+            font-size: 35px;
+            color: rgb(69, 62, 62);;
+        } 
         &:hover{
             color: $color-secundario;
         }
@@ -18,10 +26,10 @@
 
     .cantidad-cart{
         color: rgb(255, 255, 255);
-        
+        @media screen and (max-width: 500px){
+            color: rgb(69, 62, 62);
+         }
     }
-   
-    
 }
 
 .cart-hidden {

@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+@media screen and (max-width: 960px){
   width: 100%;
   height: 70px;
   background-color: rgb(50, 189, 103); 
+}
 `;
 
 export const Wrapper = styled.div`
+ @media screen and (max-width: 960px){
   width: 100%;
-  max-width: 1300px;
+  max-width: 960px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: auto;
+ }
+   
   
 `;
 
@@ -26,75 +31,48 @@ export const LogoContainer = styled.div`
   
 `;
 
-export const Menu = styled.ul`
-  height: 100%;
+export const CartContainer = styled.div`
+  margin-left: 1rem;
   display: flex;
-  justify-content: space-between;
-  list-style: none;
-  z-index: 300;
+  align-items: center;
+  
+`;
+
+export const Menu = styled.ul`
   @media screen and (max-width: 960px) {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
     background-color: rgb(85, 85, 85);
     position: absolute;
     top: 70px;
     left: ${({ open }) => (open ? "0" : "-100%")}; //Import
-    
+    z-index: 300;
     width: 100%;
     height: 90vh;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     transition: 0.5s all ease;
-
-    
-    
   }
 `;
 
-export const MenuItem = styled.li`
-  height: 100%;
+export const MenuItem = styled.li` 
   @media screen and (max-width: 960px) {
     width: 100%;
-    height: 70px;
+    height: 85px;
     display: flex;
     flex-wrap: wrap;
-    
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-   
-    
-   
-    
-    
+    align-items: center;    
   }
 `;
 
 
 
-export const MenuItemLink = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 0.5rem 2.5rem;
-  color: #64b2ff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  cursor: pointer;
-  
-  transition: 0.5s all ease;
-  &:hover {
-    color: #fff;
-    background-color: #e0792a;
-    transition: 0.5s all ease;
-    div {
-      svg {
-        fill: #23394d;
-      }
-    }
-  }
+export const MenuItemLink = styled.div`
   div {
     width: 100%;
     height: 100%;
@@ -108,13 +86,25 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 960px) {
+    padding: 0.5rem 2.5rem;
     width: 100%;
-    height: ${({ opent }) => (opent ? "70px" : "100vh")};
+    height: ${({ opent }) => (opent ? "70px" : "140px")};
     flex-direction: column;
     
+    &:hover {
+    color: #fff;
+    background-color: #e0792a;
+    transition: 0.5s all ease;
+    div {
+      svg {
+        fill: #23394d;
+      }
+    }
+  }
     div {
       width: 30%;
       justify-content: left;
+      row-gap: 0.1rem;
       svg {
         display: flex;
       }
