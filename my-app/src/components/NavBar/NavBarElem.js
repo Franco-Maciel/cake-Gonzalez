@@ -66,7 +66,11 @@ export const MenuItem = styled.li`
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
+    border-top: solid 1px black;
+    &:last-child{
+      border-bottom: solid 1px black;
+    }  
   }
 `;
 
@@ -88,7 +92,7 @@ export const MenuItemLink = styled.div`
   @media screen and (max-width: 960px) {
     padding: 0.5rem 2.5rem;
     width: 100%;
-    height: ${({ opent }) => (opent ? "70px" : "140px")};
+    height: ${({ opent }) => (opent ? "70px" : "170px")};
     flex-direction: column;
     
     &:hover {

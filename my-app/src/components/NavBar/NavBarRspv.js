@@ -65,15 +65,15 @@ export const  NavBarRspv= () => {
             </MenuItem>
             {isOpened ? 
             <>
-            <MenuItem  onClick={() => setShowMobileMenu(!showMobileMenu)}>
-              <MenuItemLink id="submenu-nav">
-                <div className="submenu-nav">
+            
+              <MenuItemLink id="submenu-nav" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                
                   <Link to='/productos/FrutosSecos' className='header-sublinkc'>Frutos Secos</Link>
                   <Link to='/productos/Cereales' className='header-sublinkc'>Cereales</Link>
                   <Link to='/productos/Bebidas' className='header-sublinkc'>Bebidas</Link>
-                </div>
+                
               </MenuItemLink>
-            </MenuItem>
+            
             </>
             : undefined }
             <MenuItem>
